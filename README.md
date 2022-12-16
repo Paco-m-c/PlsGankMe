@@ -1,4 +1,4 @@
-# PleasGankMe
+# PlsGankMe
 
 PlsGankMe is a simple Python project used to obtain the number of ganks of a jungler to top or bot of the last games they played.
 
