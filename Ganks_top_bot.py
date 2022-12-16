@@ -58,18 +58,18 @@ def get_kill_positions_by_name(name, region= 'euw1',count = 100,start  = 0,minut
                 m_timeline = lol_watcher.match.timeline_by_match(region, m)
                 break
             except:
-                print("Reintentando...")
+                print("Error, retrying")
         iteration += 1
         for p in m_data['info']['participants']:
             if p['summonerName'] == name and p['teamPosition'] == 'JUNGLE':
                 pid = p['participantId']
                 st = St(pid, m_timeline,m_data,minute=minute)    
-                print("iteración",iteration)
+                print("Iteration:",iteration)
                 x_values_aux, y_values_aux = st.get_kill_positions_different_gank(add_assists=True)
                 x_values_per_game.append(x_values_aux)
                 y_values_per_game.append(y_values_aux)
             elif p['summonerName'] == name:
-                print(p['teamPosition'],p['role'],p['lane'], "iteration", iteration)
+                print(p['teamPosition'],p['role'],p['lane'], "Iteration:", iteration)
     return x_values_per_game, y_values_per_game
 
 def init(key):
