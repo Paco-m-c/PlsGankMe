@@ -72,7 +72,8 @@ def get_kill_positions_by_name(name, region= 'euw1',count = 100,start  = 0,minut
                 print(p['teamPosition'],p['role'],p['lane'], "iteration", iteration)
     return x_values_per_game, y_values_per_game
 
-KEY = open('keys').read()
+def init(key):
+    global lol_watcher
+    lol_watcher = LolWatcher(key)
 
-lol_watcher = LolWatcher(KEY)
 
